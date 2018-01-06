@@ -8,6 +8,7 @@
 require_once './vendor/autoload.php';
 $work=new Workerman\Worker("http://0.0.0.0:2333");
 $work->onMessage=function($connection,$data){
+
     $connection->send("helloworld");
 };
 \Workerman\Worker::runAll();
